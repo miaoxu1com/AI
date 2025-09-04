@@ -6,7 +6,8 @@
 - qwen coder
 
 - 任务一测试
- 
+  提示词：
+  
 Create a single HTML file containing CSS and JavaScript to generate an animated weather card. The card should visually represent the following weather conditions
 with distinct animations: Wind: (e.g., moving clouds, swaying trees, or wind lines) Rain: (e.g., falling raindrops, puddles forming) Sun: (e.g., shining rays, bright background)
 Snow: (e.g., falling snowflakes, snow accumulating)
@@ -15,3 +16,8 @@ The JavaScript should include a way to switch between the different weather cond
 
 
 - 生成效果：claude sonnet 4.5 > glm 4.5 > kimi k2
+- 任务二测试
+
+提示词：
+
+以markdown源码输出   python 3.14 关键特性变动
