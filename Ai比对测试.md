@@ -22,3 +22,5 @@ The JavaScript should include a way to switch between the different weather cond
 提示词：
 
 以markdown源码输出   python 3.14 关键特性变动
+
+- 生成效果： kimi k2 > claude sonnet 4.5 = glm 4.5 
