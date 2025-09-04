@@ -5,7 +5,7 @@
 - kiro  基于claude sonnet 4.5
 - qwen coder
 
-- 任务一测试
+  1. 任务一测试
 
 提示词：
 
@@ -17,7 +17,8 @@ The JavaScript should include a way to switch between the different weather cond
 
 
 - 生成效果：claude sonnet 4.5 > glm 4.5 > kimi k2
-- 任务二测试
+  
+  2. 任务二测试
 
 提示词：
 
