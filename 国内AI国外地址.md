@@ -1,1 +1,3 @@
 https://qwen.ai/home
+https://chat.z.ai
+https://chatglm.cn
