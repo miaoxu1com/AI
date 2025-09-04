@@ -6,8 +6,9 @@
 - qwen coder
 
 - 任务一测试
-  提示词：
-  
+
+提示词：
+
 Create a single HTML file containing CSS and JavaScript to generate an animated weather card. The card should visually represent the following weather conditions
 with distinct animations: Wind: (e.g., moving clouds, swaying trees, or wind lines) Rain: (e.g., falling raindrops, puddles forming) Sun: (e.g., shining rays, bright background)
 Snow: (e.g., falling snowflakes, snow accumulating)
