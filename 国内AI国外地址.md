@@ -1,3 +1,4 @@
 - https://qwen.ai/home
 - https://chat.z.ai
 - https://chatglm.cn
+- chatGPT，还有cursor、WindSurf、v0、Bolt.new、trae、comate、We0
