@@ -23,3 +23,14 @@ https://lobehub.com/zh/mcp
 https://github.com/mcp
 
 VS Code 集成 Ghidra MCP
+
+
+vscode + 第三方服务claude
+.claude.json是claude ai的配置文件 
+1.认证信息配置 
+2.环境变量配置
+
+vscode需要安装 claude code插件
+需要在vscode setting中配置
+claudeCode.selectedModel 为三方服务商提供的模型不修改为三方服务商模型会出现没有权限的情况，因为插件默认使用的claude官方模型
+CLAUDE_CODE_GIT_BASH_PATH 环境变量一定要设置为git-bash.exe路径，非目录路径，cluade code cli依赖linux环境 需要这个环境
