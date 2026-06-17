@@ -10,3 +10,7 @@
 - npx skills add https://github.com/charon-fan/agent-playbook --skill self-improving-agent
 - npx skills add mattpocock/skills
 
+#### Skills 的加载机制可能有两个来源：
+  - 1. .skill-lock.json 中注册的 skills（通过 npx skills add 安装的）
+  - 2. .agent存放第三方安装的skills
+  - 3. .claude/skills/ 目录下的 skills（用户自定义）
