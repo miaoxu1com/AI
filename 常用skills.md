@@ -7,6 +7,10 @@
 - https://cn.clawhub-mirror.com
 - https://agentskill.sh/
 - https://skillhub.cn/
+
+#### Plugins
+- claude-mem
+- 
 #### claw下载解压直接放入claude skill可以生效，实际测试skill-vetter
 
 #### SKill参数代表仓库下skills目录
