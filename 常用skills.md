@@ -9,7 +9,7 @@
 - https://skillhub.cn/
 
 #### Plugins
-- npx claude-mem install
+- npx claude-mem install /plugin marketplace add thedotmack/claude-mem /plugin install claude-mem
 - 
 #### claw下载解压直接放入claude skill可以生效，实际测试skill-vetter
 
