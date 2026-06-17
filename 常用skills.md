@@ -9,7 +9,7 @@
 - https://skillhub.cn/
 
 #### Plugins
-- claude-mem
+- npx claude-mem install
 - 
 #### claw下载解压直接放入claude skill可以生效，实际测试skill-vetter
 
