@@ -8,6 +8,5 @@
 - npx skills add https://github.com/anthropics/skills --skill skill-creator
 - npx skills add https://github.com/vercel-labs/skills --skill find-skills
 - npx skills add https://github.com/charon-fan/agent-playbook --skill self-improving-agent
-
-
+- npx skills add mattpocock/skills
 
