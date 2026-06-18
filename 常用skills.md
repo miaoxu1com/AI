@@ -1,3 +1,7 @@
+### 环境配置
+- CLAUDE_CODE_GIT_BASH_PATH=C:\Git\bin\bash.exe
+**注意**：一定要用C:\Git\bin\bash不要使用C:\Git\usr\bin\bash，hook session会报错，安装的git for window，默认是C:\Git\usr\bin\bash
+
 ### SKills仓库路径
 
 - https://github.com/charon-fan/agent-playbook
