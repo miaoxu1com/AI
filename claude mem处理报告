@@ -1,0 +1,80 @@
+claude-mem 问题处理报告
+
+  问题现象
+
+  运行 claude-mem status 时发现：
+  - 语义搜索失败，报错 MCP error -32000: Connection closed
+  - 降级到 FTS5 关键字搜索（功能受限）
+  - 知识库 corpora 为空，无法正常写入向量索引
+
+  根因分析
+
+  根因 1：uvx 命令语法错误（核心问题）
+
+  - 位置：ChromaMcpManager.ts 的 buildCommandArgs() 方法
+  - 错误代码：
+  `chroma-mcp==${CHROMA_MCP_PINNED_VERSION}`  // 直接当作命令名
+  - 原因：uvx 不接受 包名==版本 作为位置命令，正确语法是 --from "包名==版本" 实际命令名
+  - 结果：chroma-mcp 子进程每次启动都立即失败 → 连接关闭 → 语义搜索全部失败
+
+  根因 2：Embedding 模型未下载（次生问题）
+
+  - chroma 默认 embedding 模型 all-MiniLM-L6-v2（79.3MB）需首次下载
+  - 下载速度仅约 200KB/s，耗时 6-7 分钟
+  - 下载期间所有 chroma_add_documents 调用超时（MCP error -32001）
+  - 这是个一次性问题，但会掩盖真正的根因
+
+  修复措施
+
+  1. 修复 uvx 调用语法
+
+  修改文件（3处，源码 + 2个编译副本）：
+  - src/services/sync/ChromaMcpManager.ts（TypeScript 源码）
+  - plugins/marketplaces/.../scripts/worker-service.cjs（运行时副本）
+  - plugins/cache/.../13.6.2/scripts/worker-service.cjs（缓存副本）
+
+  修改内容（remote 和 local 两处分支）：
+  // 修复前
+  `chroma-mcp==${CHROMA_MCP_PINNED_VERSION}`
+
+  // 修复后
+  '--from', `chroma-mcp==${CHROMA_MCP_PINNED_VERSION}`, 'chroma-mcp'
+
+  2. 手动预下载 Embedding 模型
+
+  - 创建 chroma 数据目录：~/.claude-mem/chroma
+  - 触发模型下载至 ~/.cache/chroma/onnx_models/all-MiniLM-L6-v2/onnx/
+  - 验证 embedding 性能：0.33 秒/次，正常
+
+  3. 清理僵死进程
+
+  - 终止旧 worker（PID 38372 → 22732）和 chroma-mcp 子进程
+  - 删除 worker.pid、supervisor.json 状态文件
+
+  验证结果
+
+  ┌───────────────────────────────────────────────────┬──────────────────────────────────────────────────┐
+  │                      验证项                       │                       结果                       │
+  ├───────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
+  │ uvx --from 语法测试                               │ ✅ exit code 0，正常启动                         │
+  ├───────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
+  │ chroma-mcp MCP 协议（initialize/tools/list/call） │ ✅ 全部正常响应                                  │
+  ├───────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
+  │ Embedding 功能                                    │ ✅ 0.33s，输出 1×384 向量                        │
+  ├───────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
+  │ chroma-mcp 连接                                   │ ✅ 日志显示 Connected to chroma-mcp successfully │
+  ├───────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
+  │ observation 同步（模型下载后）                    │ ✅ observation 51、summary 3、prompt 3 成功写入  │
+  └───────────────────────────────────────────────────┴──────────────────────────────────────────────────┘
+
+  待办
+
+  ⚠️ 需重启 Claude Code 会话才能让修复完全生效：
+  - 当前 worker 进程僵死，占用端口 37777 但进程已退出
+  - 重启后新 worker 会用修复后的代码自动启动
+  - 步骤：/exit → 清理残留进程 → 重启 claude → 运行 claude-mem status 验证
+
+  修改清单备份
+
+  - 修改前已备份 worker-service.cjs → worker-service.cjs.bak
+  - 建议向上游 thedotmack/claude-mem 仓库提 issue/PR，说明 Windows + uvx 0.5.12 下 chroma-mcp==version 语法不被接受，需用 --from 形式
