@@ -54,7 +54,7 @@ Start-Process "http://127.0.0.1:37777"
 - https://blog.csdn.net/ZxqSoftWare/article/details/161293220
 
 
-### SKills仓库路径
+### SKills下载
 
 - https://github.com/charon-fan/agent-playbook
 - https://skillsmp.com/skills
@@ -63,6 +63,7 @@ Start-Process "http://127.0.0.1:37777"
 - https://cn.clawhub-mirror.com
 - https://agentskill.sh/
 - https://skillhub.cn/
+- https://agentskillsfinder.com/zh
 
 #### Plugins
 ##### 安装
