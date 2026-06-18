@@ -41,7 +41,9 @@ claude-mem 问题处理报告
   '--from', `chroma-mcp==${CHROMA_MCP_PINNED_VERSION}`, 'chroma-mcp'
 
   2. 手动预下载 Embedding 模型
-
+  - https://hf-mirror.com/sentence-transformers/all-MiniLM-L6-v2/tree/main/onnx
+  - https://modelscope.cn/models/sentence-transformers/all-MiniLM-L6-v2/tree/master/onnx
+  - C:\Users\miaoxu-jwk\.cache\chroma\onnx_models\all-MiniLM-L6-v2\onnx\model.onnx
   - 创建 chroma 数据目录：~/.claude-mem/chroma
   - 触发模型下载至 ~/.cache/chroma/onnx_models/all-MiniLM-L6-v2/onnx/
   - 验证 embedding 性能：0.33 秒/次，正常
