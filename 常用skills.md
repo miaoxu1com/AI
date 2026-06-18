@@ -3,7 +3,53 @@
 - CLAUDE_CODE_USE_POWERSHELL_TOOL=1
 - "hasCompletedOnboarding": true
 
-**注意**：需要管理员运行，hook session会报错
+**注意**：
+
+#### Claude Mem 改为api-auth
+- ~/.claude-mem/settings.json
+  
+```shell
+"CLAUDE_MEM_PROVIDER": "claude",
+"CLAUDE_MEM_MODEL": "deepseek-v4-flash",
+"CLAUDE_MEM_CLAUDE_AUTH_METHOD": "api-key",
+"ANTHROPIC_AUTH_TOKEN": "sk-你的DeepSeek-API-Key",
+"ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic"
+```
+- .claude-mem/.env
+  
+```shell
+# ~/.claude-mem/.env
+ANTHROPIC_AUTH_TOKEN=sk-你的DeepSeek-API-Key
+ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+```
+#### 重启 worker
+
+```shell
+# 1. 找到并杀掉旧 worker
+Get-Content ~/.claude-mem/worker.pid  # 获取 PID
+Stop-Process -Id <PID> -Force
+
+# 2. 清理 PID 文件（可选，worker 会自动处理 stale PID）
+Remove-Item ~/.claude-mem/worker.pid
+
+# 3. 重新触发 Claude Code 会话——worker 会自动启动
+```
+
+#### 验证修复
+
+```shell
+# 检查日志中的 SDK 返回长度——应该远超 33 chars
+Select-String -Path ~/.claude-mem/logs/claude-mem-*.log -Pattern "Response received"
+
+# 修复前：全部是 "(33 chars)"
+# 修复后：出现 "(750 chars)"、"(1203 chars)"、"(2687 chars)" 等
+
+# 打开 dashboard 确认 observation 已落库
+Start-Process "http://127.0.0.1:37777"
+```
+
+- https://blog.csdn.net/ZxqSoftWare/article/details/161293220
+
 
 ### SKills仓库路径
 
