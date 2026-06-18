@@ -9,8 +9,13 @@
 - https://skillhub.cn/
 
 #### Plugins
-- npx claude-mem install /plugin marketplace add thedotmack/claude-mem /plugin install claude-mem
-- 
+##### 安装
+- npx claude-mem install
+- /plugin marketplace add thedotmack/claude-mem
+  - /plugin install claude-mem
+##### 卸载
+- npx claude-mem uninstall -g
+- /plugin uninstall claude-mem
 #### claw下载解压直接放入claude skill可以生效，实际测试skill-vetter
 
 #### SKill参数代表仓库下skills目录
