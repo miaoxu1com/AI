@@ -76,7 +76,7 @@ Start-Process "http://127.0.0.1:37777"
   - npm run worker:restart
 ##### 卸载
 - npx claude-mem uninstall -g
-- /plugin uninstall claude-mem
+- claude plugin uninstall claude-mem@thedotmack
 
 ##### 插件缓存清理
 - .claude\plugins\cache
