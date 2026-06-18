@@ -41,6 +41,10 @@ claude-mem 问题处理报告
   '--from', `chroma-mcp==${CHROMA_MCP_PINNED_VERSION}`, 'chroma-mcp'
 
   2. 手动预下载 Embedding 模型
+  - # 方法1：直接下载 tar.gz 放到缓存目录
+    - mkdir -p ~/.cache/chroma/onnx_models/all-MiniLM-L6-v2
+    - curl -L -o ~/.cache/chroma/onnx_models/all-MiniLM-L6-v2/onnx.tar.gz \
+    - https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/onnx.tar.gz
   - https://hf-mirror.com/sentence-transformers/all-MiniLM-L6-v2/tree/main/onnx
   - https://modelscope.cn/models/sentence-transformers/all-MiniLM-L6-v2/tree/master/onnx
   - C:\Users\miaoxu-jwk\.cache\chroma\onnx_models\all-MiniLM-L6-v2\onnx\model.onnx
