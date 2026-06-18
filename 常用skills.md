@@ -16,6 +16,9 @@
 ##### 卸载
 - npx claude-mem uninstall -g
 - /plugin uninstall claude-mem
+
+##### 插件缓存清理
+- .claude\plugins\cache
 #### claw下载解压直接放入claude skill可以生效，实际测试skill-vetter
 
 #### SKill参数代表仓库下skills目录
