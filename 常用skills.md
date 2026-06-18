@@ -17,6 +17,10 @@
 - npx claude-mem install
 - /plugin marketplace add thedotmack/claude-mem
   - /plugin install claude-mem
+- scoop install bun
+- 启动claude mem worker
+  - cd ~/.claude/plugins/marketplaces/thedotmack
+  - npm run worker:restart
 ##### 卸载
 - npx claude-mem uninstall -g
 - /plugin uninstall claude-mem
