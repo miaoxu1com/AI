@@ -1,7 +1,10 @@
 ### 环境配置
-- CLAUDE_CODE_GIT_BASH_PATH=C:\Git\bin\bash.exe
-- CLAUDE_CODE_USE_POWERSHELL_TOOL=1
-- "hasCompletedOnboarding": true
+
+```shell
+CLAUDE_CODE_GIT_BASH_PATH=C:\Git\bin\bash.exe
+CLAUDE_CODE_USE_POWERSHELL_TOOL=1
+"hasCompletedOnboarding": true
+```
 
 **注意**：
 
