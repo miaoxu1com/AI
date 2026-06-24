@@ -1,0 +1,1 @@
+- [https://femoon.top/blog/claude-code-force-powershell](https://femoon.top/blog/claude-code-force-powershell)
