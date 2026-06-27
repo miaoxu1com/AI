@@ -1,8 +1,5 @@
 # AGENTS.md
 
-**参考**
-- [Agents最佳实践](https://cnkirito.moe/ai-agents-md-practise/)
-
 
 ## 1. 项目概述
 
