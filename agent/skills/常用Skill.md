@@ -36,6 +36,8 @@
 
 ### 编程规范&代码质量
 - [mattpocock](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs)
+- [ponytail](https://github.com/DietrichGebert/ponytail)
+
 
 ### 上下文优化&Token优化
 - [headroom](https://github.com/headroomlabs-ai/headroom)
