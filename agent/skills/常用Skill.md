@@ -13,9 +13,13 @@
 - [Understand-Anything](https://github.com/Egonex-AI/Understand-Anything)
 - [GitNexus](https://github.com/abhigyanpatwari/GitNexus)
 
+### 状态监控
+- [claude-hud](https://github.com/jarrodwatts/claude-hud)
 
-### Agent增强
+### 任务编排
 - [ruflo](https://github.com/ruvnet/ruflo)
+- [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode)
+
 
 
 ### web自动化
