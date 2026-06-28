@@ -33,15 +33,22 @@
 [agent-browser](https://github.com/vercel-labs/agent-browser)
 [playwright-cli](https://github.com/microsoft/playwright#playwright-cli)
 
+#### 爬取
+Firecrawl CLI
+
 
 ### 编程规范&代码质量
 - [mattpocock](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs)
 - [ponytail](https://github.com/DietrichGebert/ponytail)
+- [agent-skills](https://github.com/addyosmani/agent-skills/tree/main)
+
 
 
 ### 上下文优化&Token优化
 - [headroom](https://github.com/headroomlabs-ai/headroom)
 - [token-optimization](https://github.com/topics/token-optimization)
+- [caveman](https://github.com/JuliusBrussee/caveman)
+
 
 ### 跨会话记忆
 - [chromadb](https://github.com/topics/chromadb)
