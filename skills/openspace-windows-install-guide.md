@@ -82,21 +82,6 @@ openspace-mcp --help
 # 捕获成功任务为Skill
 openspace capture --task "任务描述" --output skill-name
 
-# 查看已沉淀技能
-openspace skill list
-
-# 技能进化（自动优化）
-openspace evolve --skill skill-name
-
-# 查看进化历史
-openspace history --skill skill-name
-
-# 批量优化Token消耗
-openspace optimize --all-skills
-
-# 启动自我进化引擎
-openspace engine start
-
 ```
 
 > ⚠️ **Windows 特殊行为**：`openspace-mcp --help` **不会输出任何内容**，但退出码为 0。这不是 bug —— `openspace-mcp` 是 MCP 协议服务器（stdio 模式），它不实现 argparse/click 的帮助系统，而是直接启动 JSON-RPC 协议循环等待 stdin 输入。**只要退出码为 0 就说明安装成功。**
