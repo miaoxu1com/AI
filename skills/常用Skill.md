@@ -1,5 +1,8 @@
 ## 列表清单
 
+### 不必安装的插件
+-[不必安装的插件](https://juejin.cn/post/7633351194199244819)
+
 ### 搜索
 - [find-skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills)
 
