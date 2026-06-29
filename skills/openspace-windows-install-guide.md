@@ -118,6 +118,14 @@ openspace-mcp --help; echo "EXIT: $?"
 }
 ```
 
+## 自建模型openspace配置
+```shell
+C:\Users\xxx\OpenSpace\openspace
+.env
+OPENSPACE_MODEL=openai/xxx
+OPENSPACE_LLM_API_KEY=sk-xxxx
+OPENSPACE_LLM_API_BASE=https://xxx
+```
 ### 3.2 环境变量说明
 
 | 变量 | 必填 | 说明 | 示例 |
