@@ -1,1 +1,2 @@
 - [https://femoon.top/blog/claude-code-force-powershell](https://femoon.top/blog/claude-code-force-powershell)
+- [shell](https://code.claude.com/docs/zh-CN/tools-reference#shell-selection-in-settings-hooks-and-skills)
