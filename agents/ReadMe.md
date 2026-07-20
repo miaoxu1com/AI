@@ -2,6 +2,7 @@
 - [Agents编写最佳实践](https://walkinglabs.github.io/learn-harness-engineering/zh/skills/)
 - [Agents模板](https://zhuanlan.zhihu.com/p/2018419794534253961)
 - [skills编写最佳实践](https://github.com/luongnv89/claude-howto/blob/main/03-skills/README.md)
+- [https://www.cnblogs.com/sugartang/p/19778893](https://www.cnblogs.com/sugartang/p/19778893)
 
 ## Agents代理
 
