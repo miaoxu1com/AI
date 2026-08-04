@@ -1,0 +1,16 @@
+shellPath: C:\Windows\system32\bash.exe
+providers: 
+  webSearchOrder: 
+    []
+setupVersion: 1
+modelRoles: 
+  default: my-local/jinke/minimax-m2.7
+theme: 
+  light: light
+autolearn: 
+  enabled: true
+skills:
+      customDirectories:
+        - C:/Users/miaoxu-jwk/AppData/Local/hermes/skills/personal
+disabledProviders:
+      - claude
