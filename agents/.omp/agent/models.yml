@@ -1,0 +1,10 @@
+providers:
+      my-local:
+        baseUrl: 
+        api: openai-completions
+        apiKey: 
+        models:
+          - id: minimax-m2.7
+            name: minimax-m2.7
+            contextWindow: 200000
+            maxTokens: 40000
