@@ -1,0 +1,16 @@
+---
+name: "handoff"
+description: "Summarize the current conversation into a handoff document saved to OS temp dir, so a fresh agent can resume work. Invoke when transitioning work to a new agent/session."
+---
+
+# Handoff
+
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS - not the current workspace.
+
+Include a "suggested skills" section in the document, which suggests skills that the agent should invoke.
+
+Do not duplicate content already captured in other artifacts (specs, plans, ADRs, issues, commits, diffs). Reference them by path or URL instead.
+
+Redact any sensitive information, such as API keys, passwords, or personally identifiable information.
+
+If the user passed arguments, treat them as a description of what the next session will focus on and tailor the doc accordingly.
