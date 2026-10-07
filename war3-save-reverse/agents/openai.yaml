@@ -1,0 +1,4 @@
+interface:
+  display_name: "Warcraft III Save Reverse"
+  short_description: "Reverse and patch War3 saves, campaigns, and objects."
+  default_prompt: "Decode, repair, migrate, or patch Warcraft III .w3z/.w3v saves, .w3n/.w3x campaign archives, JASS scripts, and custom object data safely."
